@@ -1,18 +1,14 @@
 import { defineConfig } from "prisma/config";
 
-// DATABASE_URL viene directo del entorno en Railway/producción.
-// El bloque try/catch permite que el config cargue incluso durante el build,
-// cuando la variable puede no estar disponible aún.
-const databaseUrl = process.env.DATABASE_URL ?? '';
-
 export default defineConfig({
   schema: "prisma/schema.prisma",
   migrations: {
     path: "prisma/migrations",
   },
-  ...(databaseUrl ? {
-    datasource: {
-      url: databaseUrl,
-    },
+  // La URL solo se provee si DATABASE_URL existe (desarrollo local).
+  // En Railway/producción, prisma generate no necesita la URL —
+  // solo la necesita prisma db push/migrate, que no corre en producción.
+  ...(process.env.DATABASE_URL ? {
+    datasource: { url: process.env.DATABASE_URL }
   } : {}),
 });
