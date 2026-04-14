@@ -7,7 +7,7 @@
     "dev": "tsx watch index.ts",
     "seed": "tsx prisma/seed.ts",
     "restore": "tsx restore-data.ts",
-    "start": "npx prisma generate && node --import tsx/esm index.ts",
+    "start": "npx prisma generate --schema=prisma/schema.prisma && node --import tsx/esm index.ts",
     "build": "echo 'No build step needed'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
