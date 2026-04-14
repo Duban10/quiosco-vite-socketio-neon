@@ -9,10 +9,7 @@ import { formatCurrency } from '../utils/currency';
 import styles from '../styles/Mesero.module.css';
 import SearchBar from '../components/SearchBar';
 
-// Configuración del servidor
-const SERVER_URL = 'http://localhost:3007';
-const API_BASE = `${SERVER_URL}/api`;
-const WS_URL = SERVER_URL;
+import { SERVER_URL, API_BASE, WS_URL } from '../config/server.js';
 
 export default function Mesero() {
     const [orders, setOrders] = useState([]);

@@ -3,9 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Lock } from 'lucide-react';
 import { getStoredUser, setStoredUser } from '../utils/session';
 
-// Configuración del servidor
-const SERVER_URL = 'http://localhost:3007';
-const API_BASE = `${SERVER_URL}/api`;
+import { API_BASE } from '../config/server.js';
 
 export default function Login() {
     const [username, setUsername] = useState('');

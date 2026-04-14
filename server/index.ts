@@ -8,8 +8,9 @@ import prisma from './src/lib/prisma.ts';
 const app = express();
 app.use(cors({
     origin: [
-        'http://localhost:5173',  // desarrollo local
-        'https://quiosco-vite-socketio-neon.vercel.app/'  // producción — pon tu URL real
+        'http://localhost:5173',
+        'http://localhost:5174',
+        'https://quiosco-vite-socketio-neon.vercel.app'
     ],
     credentials: true
 }));
@@ -21,7 +22,8 @@ const io = new Server(server, {
     cors: {
         origin: [
             'http://localhost:5173',
-            'https://quiosco-vite-socketio-neon.vercel.app/'
+            'http://localhost:5174',
+            'https://quiosco-vite-socketio-neon.vercel.app'
         ],
         methods: ['GET', 'POST'],
         credentials: true
