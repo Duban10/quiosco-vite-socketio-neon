@@ -7,26 +7,41 @@ import prisma from './src/lib/prisma.ts';
 
 const app = express();
 
-// Orígenes permitidos: variable de entorno o lista por defecto
-const allowedOrigins = process.env.ALLOWED_ORIGINS
-    ? process.env.ALLOWED_ORIGINS.split(',')
-    : [
-        'http://localhost:5173',
-        'http://localhost:5174',
-        'https://quiosco-vite-socketio-neon.vercel.app'
-    ];
+// Orígenes permitidos
+const VERCEL_URL = process.env.ALLOWED_ORIGINS || 'https://quiosco-vite-socketio-neon.vercel.app';
+const allowedOriginsList = VERCEL_URL.split(',').map(o => o.trim());
 
-app.use(cors({
-    origin: allowedOrigins,
+// Función que acepta cualquier origen válido del proyecto
+const isOriginAllowed = (origin: string | undefined): boolean => {
+    if (!origin) return false;
+    // Siempre permitir localhost en desarrollo
+    if (origin.startsWith('http://localhost:')) return true;
+    // Permitir los orígenes configurados explícitamente
+    if (allowedOriginsList.includes(origin)) return true;
+    // Permitir CUALQUIER subdominio de vercel.app que contenga el nombre del proyecto
+    if (origin.endsWith('.vercel.app') && origin.includes('quiosco-vite-socketio-neon')) return true;
+    return false;
+};
+
+const corsOptions = {
+    origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
+        if (isOriginAllowed(origin)) {
+            callback(null, true);
+        } else {
+            console.warn(`CORS bloqueado para origen: ${origin}`);
+            callback(new Error(`CORS: origen no permitido: ${origin}`));
+        }
+    },
     credentials: true
-}));
+};
 
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: allowedOrigins,
+        origin: isOriginAllowed,
         methods: ['GET', 'POST'],
         credentials: true
     }
