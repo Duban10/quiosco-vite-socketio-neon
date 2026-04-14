@@ -6,14 +6,25 @@ import cors from 'cors';
 import prisma from './src/lib/prisma.ts';
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:5173',  // desarrollo local
+        'https://quiosco-vite-socketio-neon.vercel.app/'  // producción — pon tu URL real
+    ],
+    credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "*",
-        methods: ["GET", "POST"]
+        origin: [
+            'http://localhost:5173',
+            'https://quiosco-vite-socketio-neon.vercel.app/'
+        ],
+        methods: ['GET', 'POST'],
+        credentials: true
     }
 });
 
