@@ -1,0 +1,789 @@
+/* Layout */
+.mainContainer {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    background: rgba(15, 23, 42, 0.85);
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    backdrop-filter: blur(12px);
+}
+
+.sidebarHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+}
+
+.sidebarTitle {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+}
+
+.navButton {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.15s;
+}
+
+.navButtonActive {
+    background: rgba(59, 130, 246, 0.18);
+    color: var(--accent-primary);
+}
+
+.navButtonInactive {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.navLabel {
+    flex: 1;
+}
+
+.navBadge {
+    background: var(--warning);
+    color: #000;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0 6px;
+    line-height: 18px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.logoutButton {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    width: 100%;
+    justify-content: center;
+}
+
+.main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Titles */
+.sectionTitle {
+    margin: 0;
+}
+
+.sectionSubtitle {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin-top: 0.25rem;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.sectionCounter {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+/* Orders Grid */
+.emptyState {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-secondary);
+}
+
+.ordersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
+.orderCard {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: opacity 0.2s;
+}
+
+.orderCardDone {
+    opacity: 0.65;
+}
+
+.orderCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.6rem;
+}
+
+.orderTableInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.orderTableName {
+    font-weight: 700;
+}
+
+.orderTableId {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+.orderWaiter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.78rem;
+    color: var(--accent-primary);
+    margin-top: 0.15rem;
+}
+
+.orderTime {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-top: 0.1rem;
+}
+
+.orderStatus {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.orderItems {
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding-bottom: 0.6rem;
+}
+
+.orderItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.15rem;
+}
+
+.orderItemQty {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.orderObservations {
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: #fb923c;
+}
+
+.orderFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderTotal {
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.orderActions {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.orderActionButton {
+    opacity: 1;
+    cursor: pointer;
+    transform: none;
+}
+
+.orderActionButtonDisabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.orderActionButtonCancel {
+    background: rgba(239, 68, 68, 0.18);
+    color: #ef4444;
+    transform: none;
+}
+
+.orderActionButtonCancelDisabled {
+    background: rgba(239, 68, 68, 0.06);
+    color: #ef4444;
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Billing */
+.billingTabs {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.35rem;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.billingTab {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.billingTabActive {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.billingTabInactive {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.filterPanel {
+    margin-bottom: 1.5rem;
+}
+
+.filterHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filterTitle {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.clearFilterButton {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.07);
+    border: none;
+    border-radius: 6px;
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.filterTypeButtons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.filterTypeButton {
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.filterTypeButtonActive {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.filterTypeButtonInactive {
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--text-secondary);
+}
+
+.filterInputs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.filterInputGroup {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filterLabel {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.filterInput {
+    width: auto;
+    margin-bottom: 0;
+}
+
+.kpiSection {
+    margin-bottom: 1.75rem;
+}
+
+.kpiSectionLabel {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.kpiGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.kpiCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.kpiIcon {
+    padding: 0.75rem;
+    border-radius: 10px;
+}
+
+.kpiValue {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.kpiLabel {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+.billingDetail {
+    margin-bottom: 1rem;
+}
+
+.billingDetailTitle {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.billingEmptyState {
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.billingOrdersList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.billingOrderItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.billingOrderItemCompleted {
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.billingOrderItemCancelled {
+    background: rgba(239, 68, 68, 0.04);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.billingOrderInfo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.billingOrderTable {
+    font-weight: 600;
+}
+
+.billingOrderId {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-left: 0.4rem;
+}
+
+.billingOrderMeta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.78rem;
+    color: var(--accent-primary);
+}
+
+.billingOrderTime {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.billingOrderItems {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.billingOrderTotal {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.billingOrderTotalSuccess {
+    color: var(--success);
+}
+
+.billingOrderTotalCancelled {
+    color: #ef4444;
+}
+
+/* Filter Panel Styles */
+.filterPanel {
+    margin-bottom: 1.5rem;
+}
+
+/* Expense Form */
+.expenseFormPanel {
+    margin-bottom: 1.25rem;
+    border-left: 4px solid var(--accent-primary);
+}
+
+.expenseFormPanelEdit {
+    border-left-color: #fb923c;
+}
+
+.expenseFormTitle {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.expenseGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.expenseInputGroup {
+    margin-bottom: 1rem;
+}
+
+.expenseInputLabel {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.expenseFormActions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.expenseListPanel {
+    margin-bottom: 1rem;
+}
+
+.expenseListHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.expenseListTotal {
+    font-size: 0.82rem;
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.expenseListLoading {
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.expenseItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: rgba(239, 68, 68, 0.04);
+    border: 1px solid rgba(239, 68, 68, 0.12);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.expenseItemInfo {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.expenseCategoryBadge {
+    padding: 0.15rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+}
+
+.expenseItemMeta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.expenseAmount {
+    font-weight: 700;
+    color: #ef4444;
+    white-space: nowrap;
+}
+
+.expenseActions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.expenseButton {
+    border: none;
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.expenseButtonEdit {
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--accent-primary);
+}
+
+.expenseButtonDelete {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+}
+
+/* Additional utility classes */
+.formLabel {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.formInput {
+    margin-bottom: 0;
+}
+
+.formError {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.hamburgerButton {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-primary);
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    padding: 0;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .contentTextDistriPeriodo > div:first-child {
+        justify-content: flex-start !important;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        z-index: 1000;
+        height: 100vh;
+        transition: left 0.3s ease;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .sidebarOpen {
+        left: 0;
+    }
+    
+    .sidebarOpen{
+        right: 1rem;
+        left: auto;
+    }
+
+    .sidebarOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: block;
+    }
+
+    .sidebarHidden {
+        display: none;
+    }
+
+    .hamburgerButton {
+        display: flex !important;
+    }
+
+    .main {
+        padding: 1rem;
+        padding-top: 60px;
+    }
+
+    .sectionHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ordersGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .orderCard {
+        padding: 0.75rem;
+    }
+
+    .billingTabs {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .billingTab {
+        white-space: nowrap;
+    }
+
+    .kpiGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .filterInputs {
+        flex-direction: column;
+    }
+
+    .filterInput {
+        width: 100%;
+    }
+
+    .expenseItemInfo {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .expenseItem {
+        flex-direction: column;
+    }
+
+    .expenseActions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .billingOrderInfo {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .billingOrderItem {
+        flex-direction: column;
+    }
+}

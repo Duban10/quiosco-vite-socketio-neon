@@ -1,0 +1,264 @@
+.navHeader {
+    justify-content: space-between;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.h2 {
+    margin: 0;
+}
+
+.btn {
+    /* global */
+}
+
+.btnSm {
+    /* global */
+}
+
+.btnLogout {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 1.75rem;
+    align-items: start;
+}
+
+.h3Header {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.h3HeaderCompleted {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.statusDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.statusDotWarning {
+    background: var(--warning);
+}
+
+.statusDotSuccess {
+    background: var(--success);
+}
+
+.emptyState {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.emptyStateText {
+    color: var(--text-secondary);
+}
+
+.orderCardPending {
+    display: flex;
+    flex-direction: column;
+}
+
+.orderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.orderTableName {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.orderMeta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.timeText {
+    color: var(--text-secondary);
+}
+
+.waiterBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--accent-primary);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.1rem 0.5rem;
+    border-radius: 9999px;
+}
+
+.orderDetailsBox {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.orderDetailsTitle {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.orderDetailsList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.orderDetailsItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.orderDetailsItemText {
+    font-weight: 500;
+}
+
+.observationsBox {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.observationsLabel {
+    color: #ef4444;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+}
+
+.observationsText {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.completeButton {
+    width: 100%;
+    margin-top: auto;
+}
+
+.completedOrdersList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 700px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.completedEmptyText {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.completedOrderCard {
+    opacity: 0.7;
+    padding: 1rem;
+}
+
+.completedOrderCardCancelled {
+    border-left: 4px solid #ef4444;
+}
+
+.completedOrderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.completedOrderTitle {
+    font-weight: 600;
+}
+
+.completedOrderWaiter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--accent-primary);
+}
+
+.completedOrderBadge {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.5rem;
+}
+
+.completedOrderItems {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.completedOrderObservations {
+    font-size: 0.8rem;
+    color: #fb923c;
+    font-style: italic;
+}
+
+.completedOrderTime {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .mobileTabs {
+        display: flex !important;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding: 0 1rem 1rem;
+        margin-bottom: 1rem;
+        grid-column: 1 / -1;
+    }
+
+    .h3Header,
+    .h3HeaderCompleted {
+        display: none;
+    }
+
+    .completedOrdersList {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .orderCardPending {
+        margin-bottom: 1rem;
+    }
+}

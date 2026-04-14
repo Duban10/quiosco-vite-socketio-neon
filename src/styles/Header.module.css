@@ -1,0 +1,49 @@
+.header {
+    background: rgba(15,23,42,0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.companyName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.userIcon {
+    width: 20px;
+    height: 20px;
+}
+@media (max-width: 768px) {
+    header{
+        justify-content: space-evenly !important;
+    }
+}

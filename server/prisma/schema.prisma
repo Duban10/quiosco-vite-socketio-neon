@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id Int @id @default(autoincrement())
+  name String
+  slug String @unique
+  products Product[]
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+  name String
+  price Float
+  image String
+  stock Int @default(0)
+  categoryId Int
+  category Category @relation(fields: [categoryId], references: [id])
+  orderItem OrderProducts[]
+}
+
+model Order {
+  id Int @id @default(autoincrement())
+  tableId Int?
+  table Table? @relation(fields: [tableId], references: [id])
+  total Float
+  date DateTime @default(now())
+  status Boolean @default(false)
+  cancelled Boolean @default(false)
+  orderReadyAt DateTime?
+  observations String?
+  userId Int?
+  user User? @relation(fields: [userId], references: [id])
+  orderProducts OrderProducts[]
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  username String    @unique
+  password String 
+  role     String 
+  orders   Order[]
+  expenses Expense[]
+}
+
+model OrderProducts {
+  id Int @id @default(autoincrement())
+  orderId Int
+  order Order @relation(fields: [orderId], references: [id])
+  productId Int
+  product Product @relation(fields: [productId], references: [id])  
+  quantity Int
+}
+
+model Expense {
+  id          Int      @id @default(autoincrement())
+  amount      Float
+  description String
+  category    String   @default("General")
+  date        DateTime @default(now())
+  userId      Int?
+  user        User?    @relation(fields: [userId], references: [id])
+}
+
+model DailyCash {
+  id        Int      @id @default(autoincrement())
+  date      String   // formato YYYY-MM-DD, índice único por día
+  amount    Float    @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([date])
+}
+
+model AppConfig {
+  id Int @id @default(autoincrement())
+  logoUrl String?
+  companyName String?
+  startingCash Float? @default(0)
+}
+
+model Table {
+  id Int @id @default(autoincrement())
+  name String @unique
+  orders Order[]
+}

@@ -1,0 +1,237 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Bebidas",
+      "slug": "bebidas"
+    },
+    {
+      "id": 2,
+      "name": "Platos Principales",
+      "slug": "platos-principales"
+    },
+    {
+      "id": 3,
+      "name": "Postres",
+      "slug": "postres"
+    },
+    {
+      "id": 4,
+      "name": "Ensaladas",
+      "slug": "ensaladas"
+    },
+    {
+      "id": 5,
+      "name": "Aperitivos",
+      "slug": "aperitivos"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Agua",
+      "price": 1500,
+      "image": "https://media.istockphoto.com/id/1470697684/photo/drinking-water-in-hand-at-shop.jpg?s=612x612&w=0&k=20&c=boo23h9YAxzHFnKEalhOiTxdX7GnApBysVCy81CwyjY=",
+      "stock": 50,
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Gaseosa",
+      "price": 3000,
+      "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29jYWNvbGF8ZW58MHx8MHx8fDA%3D",
+      "stock": 40,
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Jugo Natural",
+      "price": 5000,
+      "image": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8anVnb3xlbnwwfHwwfHx8MA%3D%3D",
+      "stock": 30,
+      "categoryId": 1
+    },
+    {
+      "id": 4,
+      "name": "Cerveza",
+      "price": 4500,
+      "image": "https://images.unsplash.com/photo-1600213903598-25be92abde40?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym90ZWxsYSUyMGRlJTIwY2VydmV6YXxlbnwwfHwwfHx8MA%3D%3D",
+      "stock": 25,
+      "categoryId": 1
+    },
+    {
+      "id": 5,
+      "name": "Arroz con Pollo",
+      "price": 15000,
+      "image": "https://images.unsplash.com/photo-1679735386220-e8888925676e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGFycm96JTIwZGUlMjBwb2xsb3xlbnwwfHwwfHx8MA%3D%3D",
+      "stock": 20,
+      "categoryId": 2
+    },
+    {
+      "id": 6,
+      "name": "Filete de Res",
+      "price": 20000,
+      "image": "https://plus.unsplash.com/premium_photo-1723672929404-36ba6ed8ab50?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmlsZXRlJTIwZGUlMjByZXMlMjBjb21pZGF8ZW58MHx8MHx8fDA%3D",
+      "stock": 15,
+      "categoryId": 2
+    },
+    {
+      "id": 7,
+      "name": "Salmón a la Mantequilla",
+      "price": 35000,
+      "image": "https://plus.unsplash.com/premium_photo-1664472670740-76504463a146?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FsbW9uJTIwYSUyMGxhJTIwbWFudGVxdWlsbGF8ZW58MHx8MHx8fDA%3D",
+      "stock": 12,
+      "categoryId": 2
+    },
+    {
+      "id": 8,
+      "name": "Pasta Alfredo",
+      "price": 28000,
+      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UGFzdGFzJTIwYWxmcmVkb3xlbnwwfHwwfHx8MA%3D%3D",
+      "stock": 18,
+      "categoryId": 2
+    },
+    {
+      "id": 9,
+      "name": "Flan",
+      "price": 8000,
+      "image": "https://images.unsplash.com/photo-1684456156705-5014341fc700?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RmxhbnxlbnwwfHwwfHx8MA%3D%3D",
+      "stock": 30,
+      "categoryId": 3
+    },
+    {
+      "id": 10,
+      "name": "Tiramisú",
+      "price": 12000,
+      "image": "https://plus.unsplash.com/premium_photo-1695028378225-97fbe39df62a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGlyYW1pc3V8ZW58MHx8MHx8fDA%3D",
+      "stock": 25,
+      "categoryId": 3
+    },
+    {
+      "id": 11,
+      "name": "Ensalada Cesar",
+      "price": 23000,
+      "image": "https://images.unsplash.com/photo-1551248429-40975aa4de74?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGVuc2FsYWRhJTIwY2VzYXJ8ZW58MHx8MHx8fDA%3D",
+      "stock": 20,
+      "categoryId": 4
+    },
+    {
+      "id": 12,
+      "name": "Tabla de Quesos",
+      "price": 18000,
+      "image": "https://images.unsplash.com/photo-1766085683430-59f31339787a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fFRhYmxhJTIwZGUlMjBxdWVzb3N8ZW58MHx8MHx8fDA%3D",
+      "stock": 10,
+      "categoryId": 5
+    },
+    {
+      "id": 13,
+      "name": "Alitas BBQ x8",
+      "price": 22000,
+      "image": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YWxpdGFzJTIwYmJxfGVufDB8fDB8fHww",
+      "stock": 22,
+      "categoryId": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "username": "mesero1",
+      "password": "mesero123",
+      "role": "MESERO"
+    },
+    {
+      "id": 3,
+      "username": "mesero2",
+      "password": "mesero123",
+      "role": "MESERO"
+    },
+    {
+      "id": 4,
+      "username": "cocina",
+      "password": "cocina123",
+      "role": "COCINA"
+    }
+  ],
+  "tables": [
+    {
+      "id": 1,
+      "name": "Mesa 1"
+    },
+    {
+      "id": 2,
+      "name": "Mesa 2"
+    },
+    {
+      "id": 3,
+      "name": "Mesa 3"
+    },
+    {
+      "id": 4,
+      "name": "Mesa 4"
+    },
+    {
+      "id": 5,
+      "name": "Mesa 5"
+    },
+    {
+      "id": 6,
+      "name": "Mesa 6"
+    },
+    {
+      "id": 7,
+      "name": "Barra 1"
+    },
+    {
+      "id": 8,
+      "name": "Barra 2"
+    }
+  ],
+  "appConfig": [
+    {
+      "id": 1,
+      "logoUrl": "https://res.cloudinary.com/dzx4gszzl/image/upload/v1775871638/qk0tfmghkkftgnrfyqmr.png",
+      "companyName": "SYSTEM",
+      "startingCash": 0
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
+      "amount": 150.0,
+      "description": "Compra de ingredientes frescos",
+      "category": "Suministros",
+      "date": "2026-04-08T09:30:00Z",
+      "userId": null
+    },
+    {
+      "id": 2,
+      "amount": 75.5,
+      "description": "Servicio de limpieza",
+      "category": "Servicios",
+      "date": "2026-04-07T14:00:00Z",
+      "userId": null
+    },
+    {
+      "id": 3,
+      "amount": 45.0,
+      "description": "Gas para cocina",
+      "category": "Servicios",
+      "date": "2026-04-06T10:15:00Z",
+      "userId": null
+    },
+    {
+      "id": 4,
+      "amount": 200.0,
+      "description": "Reparación de equipos de cocina",
+      "category": "Mantenimiento",
+      "date": "2026-04-05T08:00:00Z",
+      "userId": null
+    }
+  ]
+}
