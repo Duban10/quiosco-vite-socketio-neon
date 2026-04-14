@@ -1,8 +1,4 @@
-// prisma.config.ts solo se usa en desarrollo local para el CLI (prisma db push, etc.)
-// En producción Railway usa DATABASE_URL directamente en el runtime via PrismaPg adapter.
-import "dotenv/config";
-import { defineConfig } from "prisma/config";
-
-export default defineConfig({
-  schema: "prisma/schema.prisma",
-});
+// Este archivo no es necesario en Prisma 6.
+// La configuración va en prisma/schema.prisma.
+// Se mantiene vacío para no romper herramientas que lo busquen.
+export {};
