@@ -6,12 +6,18 @@ import cors from 'cors';
 import prisma from './src/lib/prisma.ts';
 
 const app = express();
-app.use(cors({
-    origin: [
+
+// Orígenes permitidos: variable de entorno o lista por defecto
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+    ? process.env.ALLOWED_ORIGINS.split(',')
+    : [
         'http://localhost:5173',
         'http://localhost:5174',
         'https://quiosco-vite-socketio-neon.vercel.app'
-    ],
+    ];
+
+app.use(cors({
+    origin: allowedOrigins,
     credentials: true
 }));
 
@@ -20,11 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: [
-            'http://localhost:5173',
-            'http://localhost:5174',
-            'https://quiosco-vite-socketio-neon.vercel.app'
-        ],
+        origin: allowedOrigins,
         methods: ['GET', 'POST'],
         credentials: true
     }

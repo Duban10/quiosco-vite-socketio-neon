@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 import { Building2, User as UserIcon } from 'lucide-react';
 import { getSessionEventName, getStoredUser } from '../utils/session';
 import styles from '../styles/Header.module.css';
-
-// Configuración del servidor
-const SERVER_URL = 'http://localhost:3007';
-const API_BASE = `${SERVER_URL}/api`;
+import { API_BASE } from '../config/server.js';
 
 const Header = () => {
     const [logoUrl, setLogoUrl] = useState(null);
